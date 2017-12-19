@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Movie Memory </title>
+	</head>
+	<body>
+		<div>
+    		<h1><a href="/">Django Girls Blog</a></h1>
+		</div>
+
+		{% for ticket in tickets %}
+    		<div>
+        		<p>published: {{ ticket.date_seen }}</p>
+        		<h1><a href="">{{ ticket.title }}</a></h1>
+        		<p>{{ ticket.notes|linebreaksbr }}</p>
+    		</div>
+		{% endfor %}
+	</body>
+</html>
