@@ -1,0 +1,80 @@
+.navbar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #E50000;
+}
+
+.navbar li:not(.logo) {
+	float:right;
+}
+
+.navbar li a {
+	display:block;
+	color:white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navbar li a:hover {
+	background-color: #B70000;
+	text-decoration: none;
+	color: white;
+
+}
+
+.navbar li a:visited {
+	text-decoration: none;
+}
+
+.navbar li.logo {
+	float: left;
+	color:white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+body {
+	color: #E50000;
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+.content {
+	padding-left: 15px;
+}
+
+.page-header h1 {
+	color: #E50000;
+	margin-top: 0;
+	padding: 20px 20px 20px 40px;
+	font-size: 36pt;
+	text-decoration: none;
+}
+
+.wholeTicket {
+	width: 50%;
+	color: black;
+	font-family: sans-serif;
+	float:left;
+}
+
+@media (max-width:1100px) {
+	.wholeTicket {
+		width: 100%
+	}
+}
+
+.ticket {
+	height: 13em;
+	font-size: 1em;
+}
+
+.poster img {
+	float: right;
+}
+

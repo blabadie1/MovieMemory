@@ -17,9 +17,11 @@ Including another URLconf
 #from django.urls import path
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import RedirectView
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
     url(r'^admin/', admin.site.urls),
     url(r'', include('tickets.urls')),
+    url(r'^$', RedirectView.as_view(url='/tickets/', permanent=True)),
 ]
