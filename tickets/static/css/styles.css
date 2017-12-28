@@ -11,8 +11,8 @@
 }
 
 .navbar li a {
-	display:block;
-	color:white;
+	display: block;
+	color: white;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
@@ -33,34 +33,36 @@
 	float: left;
 	color:white;
 	text-align: center;
-	padding: 14px 16px;
+	padding: 14px 30px;
 	text-decoration: none;
 }
 
 body {
 	color: #E50000;
-	margin: 0px;
-	border: 0px;
-	padding: 0px;
+	margin: -1px;
+	border: -1px;
+	padding: -1px;
 }
 
 .content {
 	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .page-header h1 {
 	color: #E50000;
 	margin-top: 0;
-	padding: 20px 20px 20px 40px;
+	padding: 20px 20px 20px 20px;
 	font-size: 36pt;
 	text-decoration: none;
 }
 
 .wholeTicket {
 	width: 50%;
-	color: black;
 	font-family: sans-serif;
 	float:left;
+	margin: 3em auto;
+	font-family: sans-serif;
 }
 
 @media (max-width:1100px) {
@@ -70,11 +72,63 @@ body {
 }
 
 .ticket {
-	height: 13em;
-	font-size: 1em;
+	height: 16em;
+	float: left;
+	position: relative;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
-.poster img {
-	float: right;
+.ticketLeft {
+	width: 70%;
+	padding-left: 1em;
+	margin-right: -1px;
+    border-right: 0em solid black;
+}
+
+.ticketRight {
+  width: 30%;
+  border-left: .20em dashed #fff;
+  padding-right: 1em;
+  margin-left: -2px;
+}
+
+.title h1 {
+	color: #fff;
+	font-size: 2.5em;
+	margin-top: 0;
+	background-color: #E50000;
+	padding: 1em 0.5em 0.5em 0.5em;
+	margin-bottom: 0;
+	border-top-left-radius: 20px;
+}
+
+.dateLocation, .genre, .friends, .notes {
+	text-transform: lowercase;
+	font-weight: normal;
+	padding: 0.5em 0.5em 0.5em 1em;
+	background-color: #D3D3D3;
+	margin-top: 0;
+}
+
+.ticketLeft h2 {
+	font-size: 1.25em;
+	color: black;
+	margin: 0;
+}
+
+.notes {
+	padding-bottom: 1em;
+	border-bottom-left-radius: 20px;
+}
+
+.ticket img {
+	float: left;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	padding: 1em 0.5em 0.5em 1em;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
 }
 
