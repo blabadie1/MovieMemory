@@ -3,32 +3,29 @@
 {% block content %}
 <div class="page-header">
     <h1>my tickets</h1>
+    <a href="{% url 'ticket_new' %}" class="newTicket"><span class="glyphicon glyphicon-plus"></span></a>
 </div>
 
 	{% for ticket in tickets %}
-    	<div class="wholeTicket">
-    		<div class="ticket ticketLeft">
+    	<div class="wholeContent">
+            <div class="poster">
+                <a href="http://imdb.com" target="_blank">
+                    <img src="/static/images/LadyBird.jpg">
+                </a>
+            </div>
+            <div class="ticket">
     			<div class="title">
-    				<h1>{{ticket.title}}</h1>
-    			</div>
-    			<div class="dateLocation">
-    				<h2>{{ticket.date_seen}} • {{ticket.location}}</h2>
+    				<h1>{{ticket.title}} </br>
+                        <span class="dateLocation">{{ticket.date_seen}} • {{ticket.location}}</span></h1>
     			</div>
     			<div class="genre"> 
-    				<h2>{{ticket.genre}}</h2>
+    				<h2><span class="label">genre:</span>{{ticket.genre}}</h2>
     			</div>
     			<div class="friends">
-    				<h2>fellow viewers: {{ticket.companions}}</h2>
+    				<h2><span class="label">fellow viewers:</span>{{ticket.companions}}</h2>
     			</div>
     			<div class="notes">
-    				<h2>my thoughts: {{ticket.notes}}</h2>
-    			</div>
-    		</div>
-    		<div class="ticket ticketRight">
-    			<div class="poster">
-    				<a href="">
-    					<img src="">
-    				</a>
+    				<h2><span class="label">my thoughts:</span>{{ticket.notes}}</h2>
     			</div>
     		</div>
     	</div>
