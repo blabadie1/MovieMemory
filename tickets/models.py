@@ -6,12 +6,11 @@ from django.utils import timezone
 
 class Ticket(models.Model):
 	title = models.CharField(max_length=100)
-	date_seen = models.DateTimeField(default=timezone.now)
+	date_seen = models.DateTimeField()
 	companions = models.CharField(max_length=100, null=True)
 	genre = models.CharField(max_length=50)
 	location = models.CharField(max_length=200)
-	notes = models.TextField(help_text="Enter what you learned, or what you liked")
-	#	poster = ImageField(upload_to=get_image_path, blank=True, null=True)
+	notes = models.TextField(max_length=215)
 
 	def __str__(self):
 		return self.title
