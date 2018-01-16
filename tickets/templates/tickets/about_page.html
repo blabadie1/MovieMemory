@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<html class="aboutPage">
+	<body class="opacity">
+		<div class="about">
+			{% if user.is_authenticated == False %}
+				<h1 class="text">Welcome to movie memory</h1>
+			{% else %}
+			<h1 class="text">A digital collection of movie tickets</h1>
+			{% endif %}
+			<br>
+			<p class="text">Movie memory is a site made for all sentimental filmgoers. Many times, going to the movies means more than just watching a screen. Movies can both transport us to other worlds and lead us to understand different perspectives. The settings we're in and companions we have while watching these films can also impact our observations. With this application, you can quickly and easily record the experiences you had viewing your favorite films.</p>
+			<br>
+			<p class="text">Every ticket holds the essential information needed to document what makes going to the theater special; after you see a film, add it to the stack! Simply add, edit, or delete tickets to form your personal collection. And don't worry about seeing all your films in a theater-- viewings from home can be just as memorable.</p>
+		</div>
+	</body>
+</html>
+{% endblock %}

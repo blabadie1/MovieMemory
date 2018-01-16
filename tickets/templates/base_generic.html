@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-	{% block title %}<title> Movie Memory </title>{% endblock%}
+	{% block title %}<title>movie memory </title>{% endblock%}
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,11 +21,17 @@
 
   		{% block sidebar %}
   		<ul>
-  			<li class="logo">movie memory</li>
-  			<li><a href="">log out</a></li>
-  			<li><a href="">about</a></li>
-        <li><a href="">my profile</a></li>
-  			<li><a href="{% url 'ticket_list' %}">my tickets</a></li>
+  			{% if user.is_authenticated %}
+        <li class="logo">movie memory - {{user.get_username}}</li>
+        <li><a href="{% url 'logout' %}?next=/about_page/">log out</a></li>
+        <li><a href="/about_page/">about</a></li>
+        <li><a href="{% url 'ticket_list' %}">my tickets</a></li>
+        {% else %}
+        <li class="logo">movie memory</li>
+        <li><a href="{% url 'signup' %}">sign up</a></li>
+        <li><a href="{% url 'login' %}?next={% url 'ticket_list' %}">login</a></li>
+        <li><a href="/about_page/">about</a></li>
+        {% endif %}
   		</ul>
   		{% endblock %}
   	</div>
