@@ -9,11 +9,22 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.conf import settings
+import requests
+import json
+from .serializer import TicketSerializer
 
 
 @login_required
 def ticket_list(request):
 	tickets = Ticket.objects.filter(user=request.user).filter(date_seen__lte=timezone.now()).order_by('-date_seen')
+	for tix in tickets:
+		query_title = tix.title.replace(" ", "+")
+		r = requests.get('https://api.themoviedb.org/3/search/movie?api_key=e0394ce8f2493e50cb44719828947079&query=' + query_title)
+		json = r.json()
+		json = json['results'][0]['poster_path']
+		serializer = TicketSerializer(data=json)
+		tix.poster_url = 'https://image.tmdb.org/t/p/w1280' + json
 	return render(request, 'ticket_list.html', {'tickets': tickets})
 
 @login_required

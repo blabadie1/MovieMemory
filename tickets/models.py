@@ -13,6 +13,7 @@ class Ticket(models.Model):
 	location = models.CharField(max_length=200)
 	notes = models.TextField(max_length=215)
 	user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, default='')
+	poster_url = models.URLField(default='')
 
 	def __str__(self):
 		return self.title

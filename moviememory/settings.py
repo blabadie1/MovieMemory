@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'mqeo+d@l-o&0o@l%yd3!4mb!ln+bz##$774cnay)c29s94c&hw'
+#SECRET_KEY = 'mqeo+d@l-o&0o@l%yd3!4mb!ln+bz##$774cnay)c29s94c&hw'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'mqeo+d@l-o&0o@l%yd3!4mb!ln+bz##$774cnay)c29s94c&hw')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'moviememory.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'moviememory.pythonanywhere.com', '.herokuapp.com']
 
 
 # Application definition
@@ -38,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tickets',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -67,6 +70,8 @@ TEMPLATES = [
         },
     },
 ]
+
+#TMDB_KEY = e0394ce8f2493e50cb44719828947079
 
 WSGI_APPLICATION = 'moviememory.wsgi.application'
 
@@ -125,3 +130,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/' #not doing what i want
 
 LOGIN_URL = 'about_page.html'
+
+SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SECURE = True
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)

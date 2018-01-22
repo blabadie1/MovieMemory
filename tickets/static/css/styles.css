@@ -6,6 +6,7 @@
 
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav li a {
 	color: #fff;
+	font-size: 16px;
 }
 
 .navbar-inverse .navbar-nav li a:hover, .navbar-inverse .navbar-nav .dropdown-menu li a:hover {
@@ -171,11 +172,12 @@ li.dropdown {
 	padding: 1em 0.5em 0.15em 0.5em;
 	margin-bottom: 0;
 	background:
-		radial-gradient(circle at top left, #fff 30.5px, #B70000 31px, transparent 0%),
-		radial-gradient(circle at top right, #fff 30.5px, #B70000 31px);
+		radial-gradient(circle at top left, #fff 30.5px, #B70000 32px, transparent 0%),
+		radial-gradient(circle at top right, #fff 30.5px, #B70000 32px);
 	text-align: center;
 	border-style: none;
 	height: 3.7em;
+	z-index: 1;
 }
 
 .title {
@@ -215,15 +217,16 @@ li.dropdown {
 	padding-right: 1em;
 	padding-bottom: 1em;
 	background:
-		radial-gradient(circle at bottom left, #fff 30.5px, #B70000 31px, transparent 0%),
-		radial-gradient(circle at bottom right, #fff 30.5px, #B70000 31px)
+		radial-gradient(circle at bottom left, #fff 30.5px, #B70000 32px, transparent 0%),
+		radial-gradient(circle at bottom right, #fff 30.5px, #B70000 32px)
 }
 
 .poster img {
+	border: 1px solid #000;
 	float: left;
 	width: 25%;
 	background-color: #fff;
-	padding-right: 1.5em;
+	margin-right: 1.5em;
 }
 
 /* FORM STYLE */
@@ -241,7 +244,10 @@ li.dropdown {
 .about {
 	padding-left: -20px;
 	margin: -20px;
-	margin-top: 20px;
+}
+
+h1.text {
+	padding-top: 10px;
 }
 
 h1.text, h2.text {
@@ -272,11 +278,24 @@ p.text {
 	height: 100%;
 	width: 100%;
 	padding-right: 20px;
+	position: fixed;
 	background: rgba(0,0,0,0.4);
+	margin-top: 50px;
+}
+
+/* TMDB ATTRIBUTION */
+.tmdb {
+	font-size: 8pt;
+	font-style: italic;
+}
+
+.tmdb img {
+	height: 36px;
+	width: 36px;
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
 	.navbar, .navbar-header {
 		border-bottom: 1px solid #fff;
@@ -317,19 +336,40 @@ p.text {
 	.ddContent {
 		top: 46px;
 	}
+
+	p.text {
+		font-size: 1.35em;
+	}
+
+	h1.text {
+		font-size: 2em;
+	}
 }
 
 @media (max-width: 480px) {
 
 	.content {
-		margin-right: none;
+		margin-right: auto;
 		padding-right: none;
 		overflow-x: none;
 		width: 100%;
 	}
 
 	.wholeContent {
-		width: 35em;
+		width: 25em;
+	}
+
+	.ticket {
+		width: 100%;
+	}
+
+	.poster img {
+		display: block;
+		width: 20.5em;
+		/*height: 27em;*/
+		margin-bottom: 20px;
+		margin-left: 2.2em;
+		padding-right: 0;
 	}
 
 	.page-header h1 {
@@ -348,6 +388,7 @@ p.text {
 	.notes {
 		padding-left: 1em;
 		padding-right: 1em;
+		padding-bottom: 1.5em;
 	}
 
 	.title span {
@@ -367,12 +408,17 @@ p.text {
 		font-size: 16px;
 	}
 
-	.poster img {
-		float: right;
-		background-color: #fff;
-		padding-right: 1.5em;
-}
+	p.text {
+		font-size: 1.15em;
+	}
 
+	h1.text {
+		font-size: 1.5em;
+	}
+
+	.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav li a {
+		font-size: 14px;
+	}
 }
 
 @media (min-width: 1130px) {
