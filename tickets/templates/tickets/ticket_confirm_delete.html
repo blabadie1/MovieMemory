@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h1>Delete ticket</h1>
+<h1>Delete Ticket</h1>
 
 <p>Are you sure you want to delete the ticket: {{ ticket.title }}?</p>
 
 <form action="" method="POST">
   {% csrf_token %}
-  <input type="submit" action="" value="Yes, delete." />
+  <button type="submit" class="btn btn-default">Yes, delete</button>
 </form>
 
 {% endblock %}

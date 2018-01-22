@@ -13,7 +13,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 @login_required
 def ticket_list(request):
-	tickets = Ticket.objects.filter(user=request.user).filter(date_seen__lte=timezone.now()).order_by('date_seen')
+	tickets = Ticket.objects.filter(user=request.user).filter(date_seen__lte=timezone.now()).order_by('-date_seen')
 	return render(request, 'ticket_list.html', {'tickets': tickets})
 
 @login_required

@@ -1,8 +1,9 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+<div class="ticket-body">
 <div class="page-header">
-    <h1>my tickets</h1>
+    <h1>My Tickets</h1>
     <div class="buttons">
         <ul class="buttonList">
             <li class="first"><a href="{% url 'ticket_new' %}" class="newTicket">
@@ -23,6 +24,7 @@
                     {% endfor %}
                 </div>
             </li><br>
+        </ul>
     </div>
 </div>
 
@@ -50,4 +52,5 @@
     		</div>
     	</div>
 	{% endfor %}
+</div>
 {% endblock %}

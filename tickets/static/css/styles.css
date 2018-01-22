@@ -1,51 +1,45 @@
-.navbar ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
+
+/* NAVBAR */
+.nav, .navbar, .container-fluid:hover, .navbar-header, .collapse, .navbar-brand, .navbar-nav {
 	background-color: #B70000;
-	position: fixed;
-	width: 100%;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav li a {
+	color: #fff;
+}
+
+.navbar-inverse .navbar-nav li a:hover, .navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+	color: #DAA520;
+}
+
+.navbar-inverse .navbar-nav .dropdown-menu li a {
+	color: #B70000;
+}
+
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-toggle:focus {
+	border-color: #fff;
+	background-color: #B70000;
+}
+
+.navbar-inverse .dropdown-menu li a {
+	color: #DAA520;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+	background-color: #DAA520;
+	border-color: #DAA520;
+}
+
+.navbar {
 	border-bottom: 1px solid #fff;
-	z-index: 1;
-	font-size: 16px;
-}
-
-.navbar li:not(.logo) {
-	float:right;
-}
-
-.navbar li a {
-	display: block;
-	color: #fff;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-.navbar li a:hover {
-	background-color: #A30000;
-	text-decoration: none;
-	color: #fff;
-
-}
-
-.navbar li a:visited {
-	text-decoration: none;
-}
-
-.navbar li.logo {
-	float: left;
-	color: #fff;
-	text-align: center;
-	padding: 14px 20px;
-	text-decoration: none;
 }
 
 body {
 	color: #B70000;
 	margin: -1px;
 	border: -1px;
+	font-family: 'Open Sans', sans-serif;
+	margin-top: 60px;
 }
 
 .content {
@@ -53,21 +47,23 @@ body {
 	padding-right: 0px;
 }
 
+/* CONTAINS TITLE & BUTTONS */
 .page-header {
-	max-width: 64em;
-	margin: 1.5em auto;
+	max-width: 66em;
 	border: none;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 .page-header h1 {
-	color: #B70000;
 	font-size: 5em;
 	text-decoration: none;
 	display: inline-block;
 	margin-bottom: 5px;
-	margin-left: -2px;
+	margin-left: -7px;
 }
 
+/* TICKET CREATE/EDIT/DELETE BUTTONS */
 .newTicket, .newTicket:visited {
 	float: left;
 	display: block;
@@ -78,7 +74,6 @@ body {
 	margin-left: 10px;
 	border-bottom: 1px solid #B70000;
 	position: relative;
-	z-index: 2;
 }
 
 .newTicket:hover {
@@ -112,7 +107,7 @@ body {
 	display: inline-block;
 	color: #B70000;
 	text-align: center;
-	padding: 10px 0px 10px 0px;
+	padding: 10px 0px 5px 0px;
 	text-decoration: none;
 }
 
@@ -134,8 +129,9 @@ li.dropdown {
 	z-index: 1;
 	background-color: #f9f9f9;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    top: 51px;
+    top: 46px;
     width: 100%;
+    padding: 0px 1px 0px 1px;
 }
 
 .ddContent a {
@@ -152,51 +148,24 @@ li.dropdown {
 	display: block;
 }
 
+/* INDIVIDUAL TIX */
 .wholeContent {
-	width: 64em;
-	font-family: sans-serif;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 64em;
-	display: block;
-	float: none;
-}
-
-@media (max-width:600px) {
-	.wholeContent {
-		width: 100%;
-		float: left;
-		/*margin-left: auto;
-		margin-right: auto;*/
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-
-	.page-header h1 {
-		padding-left: 0px;
-	}
-
-	.navbar li.logo {
-		padding: 14px 20px;
-	}
-
-	.page-header {
-		width: 100%;
-		margin: 1.5em auto;
-	}
+	width: 66em;
+	font-family: 'Open Sans', sans-serif;
+	max-width: 66em;
+	display: inline-block;
+	margin-bottom: 2.5em;
 }
 
 .ticket {
 	float: left;
 	width: 70%;
 	padding: 0;
-	margin-bottom: 2.5em;
-	height: 20em;
 }
 
 .title h1 {
 	color: #fff;
-	font-size: 2.5em;
+	font-size: 2.25em;
 	margin-top: 0;
 	background-color: #B70000;
 	padding: 1em 0.5em 0.15em 0.5em;
@@ -214,12 +183,11 @@ li.dropdown {
 }
 
 .title span {
-	font-size: 0.45em;
+	font-size: 0.5em;
 }
 
 .genre, .friends, .notes, .label {
-	font-size: .95em;
-	/*text-transform: lowercase;*/
+	font-size: 1em;
 	padding: 0.5em 0.5em 0.5em 1.5em;
 	background-color: #B70000;
 	color: #fff;
@@ -244,6 +212,7 @@ li.dropdown {
 }
 
 .notes {
+	padding-right: 1em;
 	padding-bottom: 1em;
 	background:
 		radial-gradient(circle at bottom left, #fff 30.5px, #B70000 31px, transparent 0%),
@@ -252,13 +221,12 @@ li.dropdown {
 
 .poster img {
 	float: left;
-	width: 30%;
+	width: 25%;
 	background-color: #fff;
 	padding-right: 1.5em;
-	max-height: 22em;
-	max-width: 15em;
 }
 
+/* FORM STYLE */
 .save {
     float: right;
     margin-right: 2%;
@@ -268,12 +236,8 @@ li.dropdown {
     width: 98%;
 }
 
-.aboutImg {
-	opacity: 0.5;
-	width: 100%;
-	height: 100%;
-}
 
+/* ABOUT PAGE */
 .about {
 	padding-left: -20px;
 	margin: -20px;
@@ -311,4 +275,112 @@ p.text {
 	background: rgba(0,0,0,0.4);
 }
 
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
 
+	.navbar, .navbar-header {
+		border-bottom: 1px solid #fff;
+	}
+
+	.navbar-inverse .navbar-nav .open .dropdown-menu li a:hover, .navbar-inverse .navbar-nav li a:hover, .navbar-inverse .navbar-nav .dropdown-menu li a:hover {
+		color: #DAA520;
+	}
+
+	.navbar-inverse .navbar-nav .open .dropdown-menu li a {
+		color: #fff;
+	}
+
+	.wholeContent {
+		width: 54em;
+	}
+
+	.page-header h1 {
+		font-size: 4em;
+	}
+
+	.title h1 {
+		font-size: 1.75em;
+	}
+
+	.genre, .friends, .notes, .label {
+		font-size: 0.9em;
+	}
+
+	.title span {
+		font-size: 0.5em;
+	}
+
+	.label {
+		font-size: 1em;
+	}
+
+	.ddContent {
+		top: 46px;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.content {
+		margin-right: none;
+		padding-right: none;
+		overflow-x: none;
+		width: 100%;
+	}
+
+	.wholeContent {
+		width: 35em;
+	}
+
+	.page-header h1 {
+		font-size: 2em;
+		margin-left: -2px;
+	}
+
+	.title h1 {
+		font-size: 14px;
+	}
+
+	.genre, .friends, .notes, .label {
+		font-size: 10px;
+	}
+
+	.notes {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+
+	.title span {
+		font-size: 10px;
+	}
+
+	.label {
+		font-size: 14px;
+	}
+
+	.ddContent {
+		top: 38px;
+		font-size: 12px;
+	}
+
+	.newTicket {
+		font-size: 16px;
+	}
+
+	.poster img {
+		float: right;
+		background-color: #fff;
+		padding-right: 1.5em;
+}
+
+}
+
+@media (min-width: 1130px) {
+
+	.ticket-body {
+		display: block;
+		width: 63%;
+		margin: 0 auto;
+		padding-left: 0;
+	}
+}

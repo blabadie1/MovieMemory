@@ -2,39 +2,54 @@
 <html lang="en">
 <head>
 
-	{% block title %}<title>movie memory </title>{% endblock%}
+	{% block title %}<title>Movie Memory </title>{% endblock%}
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 
-  	{% load static %}
-  	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="shortuct icon" type="image/png" href="{% static 'favicon.ico' %}"/>
   </head>
 
   <body>
-
-  	<div class="navbar">
-
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  	 <div class="container-fluid">
   		{% block sidebar %}
-  		<ul>
-  			{% if user.is_authenticated %}
-        <li class="logo">movie memory - {{user.get_username}}</li>
-        <li><a href="{% url 'logout' %}?next=/about_page/">log out</a></li>
-        <li><a href="/about_page/">about</a></li>
-        <li><a href="{% url 'ticket_list' %}">my tickets</a></li>
-        {% else %}
-        <li class="logo">movie memory</li>
-        <li><a href="{% url 'signup' %}">sign up</a></li>
-        <li><a href="{% url 'login' %}?next={% url 'ticket_list' %}">login</a></li>
-        <li><a href="/about_page/">about</a></li>
-        {% endif %}
-  		</ul>
-  		{% endblock %}
-  	</div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand logo" href="#">movie memory</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+  			    {% if user.is_authenticated %}
+            <li><a href="{% url 'ticket_list' %}">My Tickets</a></li>
+            <li><a href="/about_page/">About</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'logout' %}?next=/about_page/">{{user.get_username}}<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'logout' %}?next=/about_page/">Log Out</a></li>
+              </ul>
+            </li>
+            {% else %}
+            <li><a href="/about_page/">About</a></li>
+            <li><a href="{% url 'login' %}?next={% url 'ticket_list' %}">Log In</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            {% endif %}
+  		    </ul>
+        </div>
+  	  {% endblock %}
+  	 </div>
+    </nav>
 
   	<div class="content">
   		{%block content %}{% endblock %}
