@@ -1,6 +1,6 @@
 
 /* NAVBAR */
-.nav, .navbar, .container-fluid:hover, .navbar-header, .collapse, .navbar-brand, .navbar-nav {
+.nav, .navbar, .container-fluid:hover, .navbar-header, .collapse, .navbar-brand, .navbar-nav, .navbar-brand:focus {
 	background-color: #B70000;
 }
 
@@ -251,7 +251,7 @@ li.dropdown {
 }
 
 h1.text {
-	padding-top: 10px;
+	padding-top: 30px;
 }
 
 h1.text, h2.text {
@@ -265,6 +265,7 @@ p.text {
 	color: #fff;
 	font-weight: normal;
 	font-size: 18pt;
+	padding-top: 20px;
 }
 
 .aboutPage {
@@ -282,7 +283,7 @@ p.text {
 	height: 100%;
 	width: 100%;
 	padding-right: 20px;
-	position: fixed;
+	/*position: fixed;*/
 	background: rgba(0,0,0,0.4);
 	margin-top: 50px;
 }
@@ -415,6 +416,7 @@ p.text {
 	p.text {
 		font-size: 1.15em;
 		font-weight: bold;
+		padding-top: 0;
 	}
 
 	h1.text {
