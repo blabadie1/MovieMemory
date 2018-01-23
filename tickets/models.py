@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class Ticket(models.Model):
 	title = models.CharField(max_length=100)
 	date_seen = models.DateTimeField()
-	companions = models.CharField(max_length=100, null=True)
+	companions = models.CharField(max_length=100, null=True, blank=True, default='')
 	genre = models.CharField(max_length=50)
 	location = models.CharField(max_length=200)
 	notes = models.TextField(max_length=215)
