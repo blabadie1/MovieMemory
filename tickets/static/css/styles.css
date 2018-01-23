@@ -362,6 +362,7 @@ p.text {
 
 	.wholeContent {
 		width: 25em;
+		margin-left: 10px;
 	}
 
 	.ticket {
@@ -406,11 +407,11 @@ p.text {
 
 	.ddContent {
 		top: 38px;
-		font-size: 12px;
+		font-size: 16px;
 	}
 
 	.newTicket {
-		font-size: 16px;
+		font-size: 18px;
 	}
 
 	p.text {
@@ -426,6 +427,10 @@ p.text {
 
 	.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav li a {
 		font-size: 14px;
+	}
+
+	.tmdb {
+		font-size: 6pt;
 	}
 }
 
