@@ -4,7 +4,13 @@
  <div class="signup">
   <form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+    {% for field in form %}
+    <p class="signup-field">
+    	{{ field.label_tag }}<br>
+    	{{ field }}
+    </p>
+    {% endfor %}
+    <small>For both fields: minimum 8 characters, input cannot be entirely numeric.</small><br><br>
     <button type="submit" class="btn btn-default">Sign up</button>
   </form>
 </div>

@@ -239,6 +239,10 @@ li.dropdown {
     width: 98%;
 }
 
+.signup p {
+	margin-right: 50px;
+}
+
 
 /* ABOUT PAGE */
 .about {
@@ -410,10 +414,12 @@ p.text {
 
 	p.text {
 		font-size: 1.15em;
+		font-weight: bold;
 	}
 
 	h1.text {
 		font-size: 1.5em;
+		font-weight: bolder;
 	}
 
 	.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav li a {
