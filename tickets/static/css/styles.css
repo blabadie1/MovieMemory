@@ -372,7 +372,6 @@ p.text {
 	.poster img {
 		display: block;
 		width: 20.5em;
-		/*height: 27em;*/
 		margin-bottom: 20px;
 		margin-left: 2.2em;
 		padding-right: 0;
@@ -406,7 +405,7 @@ p.text {
 	}
 
 	.ddContent {
-		top: 38px;
+		top: 41px;
 		font-size: 16px;
 	}
 
