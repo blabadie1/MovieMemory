@@ -190,7 +190,7 @@ li.dropdown {
 
 .genre, .friends, .notes, .label {
 	font-size: 1em;
-	padding: 0.5em 0.5em 0.5em 1.5em;
+	padding: 0.5em 0.5em 0.5em 0.5em;
 	background-color: #B70000;
 	color: #fff;
 	margin-top: 0;
@@ -430,6 +430,10 @@ p.text {
 
 	.tmdb {
 		font-size: 6pt;
+	}
+
+	.title {
+		border-bottom: 2px dashed #B70000;
 	}
 }
 
