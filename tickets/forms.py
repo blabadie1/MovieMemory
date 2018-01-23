@@ -7,7 +7,7 @@ class TicketForm(forms.ModelForm):
 		model = Ticket
 		fields = ('title', 'date_seen', 'companions', 'genre', 'location', 'notes')
 		widgets = {
-			'date_seen': forms.TextInput(), #attrs={'placeholder': 'Use format "12/30/2017 19:30"'}),
+			'date_seen': forms.TextInput(attrs={'placeholder': 'Use format "12/30/2017 19:30"'}),
 			'notes': forms.TextInput(attrs={'placeholder': 'Enter what you learned, or what you liked'}),
 			'title': forms.TextInput(attrs={'autocomplete': 'off'}),
 			'companions': forms.TextInput(attrs={'autocomplete': 'off'}),

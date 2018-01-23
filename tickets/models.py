@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 #	return os.path.join('photos', str(instance.id), filename)
 
 class Ticket(models.Model):
-	title = models.CharField(max_length=100, primary_key=True)
+	title = models.CharField(max_length=100)
 	date_seen = models.DateTimeField()
 	companions = models.CharField(max_length=100, null=True)
 	genre = models.CharField(max_length=50)
