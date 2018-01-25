@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'mqeo+d@l-o&0o@l%yd3!4mb!ln+bz#
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'moviememory.pythonanywhere.com', 'moviememory.herokuapp.com']
 
